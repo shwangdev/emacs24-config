@@ -23,6 +23,7 @@
 (my-require-package 'icomplete+)
 (my-require-package 'emacs-jabber)
 (my-require-package 'maxframe)
+(my-require-package 'linum+)
 ;; 
 (defconst my-emacs-path "~/.emacs.d/" )
 (defconst my-emacs-lisps-path  (concat my-emacs-path "site-lisps/"))
@@ -46,7 +47,7 @@
 (require 'douban-music)
 (require 'maxframe-settings)
 (require 'auto-complete-settings)
-
+(require 'linum-settings)
 (defun makeup()
   (interactive)
   (progn
