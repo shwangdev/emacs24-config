@@ -45,7 +45,7 @@
 (require 'misc)
 (require 'douban-music)
 (require 'maxframe-settings)
-
+(require 'auto-complete-settings)
 
 (defun makeup()
   (interactive)
@@ -56,5 +56,3 @@
     (byte-recompile-directory (expand-file-name "~/.emacs.d/site-lisps") 0)
     )
 )
-
-

@@ -2,9 +2,23 @@
 
 ;; Time-stamp: <2010-11-19 09:53:20 Friday by taoshanwen>
 
+(require 'auto-complete)
 (require 'auto-complete-config)
 (require 'auto-complete+)
 (require 'misc)
+
+(defcustom ac+-source-elisp-faces '((candidates . ac+-elisp-faces-candidate))
+  "Source for faces used in Emacs."
+  :group 'auto-complete+)
+
+
+(defun ac+-apply-source-elisp-faces ()
+  "Add `ac+-elisp-faces-candidate' to `ac-omni-completion-sources'."
+  (if ac-omni-completion-sources
+      (dolist (source ac+-omni-completion-elisp-faces-sources)
+        (add-to-list 'ac-omni-completion-sources source))
+    (setq ac-omni-completion-sources
+          (append ac-omni-completion-sources ac+-omni-completion-elisp-faces-sources))))
 
 ;; After do this, isearch any string, M-: (match-data) always
 ;; return the list whose elements is integer
@@ -42,6 +56,7 @@
                  ac-source-imenu
                  ac-source-files-in-current-dir
                  ac-source-filename))
+
   ;;(setq ac-modes ac+-modes)
 
   (defun ac-start-use-sources (sources)
@@ -88,7 +103,7 @@
   (setq ac-omni-completion-sources '(("\\<featurep\s+'" ac+-source-elisp-features)
                                      ("\\<require\s+'"  ac+-source-elisp-features)
                                      ("\\<load\s+\""    ac-source-emacs-lisp-features)))
-  (ac+-apply-source-elisp-faces)
+  ;;(ac+-apply-source-elisp-faces)
   (setq ac-sources
         '(ac-source-features
           ac-source-functions
@@ -204,7 +219,8 @@
    ('ruby-mode-hook   'ac-settings-4-ruby)
    ('html-mode-hook   'ac-settings-4-html)
    ('awk-mode-hook    'ac-settings-4-awk)
-   ('tcl-mode-hook    'ac-settings-4-tcl)))
+   ('tcl-mode-hook    'ac-settings-4-tcl)
+   ))
 
 (eal-eval-by-modes
  ac-modes
