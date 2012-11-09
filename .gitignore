@@ -1,4 +1,6 @@
 *.elc
+*~
+emms/*
 el-get/
 ac-comphist.dat
 auto-save-list/

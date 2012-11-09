@@ -24,6 +24,7 @@
 (my-require-package 'emacs-jabber)
 (my-require-package 'maxframe)
 (my-require-package 'linum+)
+(my-require-package 'emms)
 ;; 
 (defconst my-emacs-path "~/.emacs.d/" )
 (defconst my-emacs-lisps-path  (concat my-emacs-path "site-lisps/"))
@@ -48,6 +49,9 @@
 (require 'maxframe-settings)
 (require 'auto-complete-settings)
 (require 'linum-settings)
+(require 'emms-settings)
+(require 'cedet-settings)
+;;
 (defun makeup()
   (interactive)
   (progn
