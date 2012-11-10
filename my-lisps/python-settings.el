@@ -9,9 +9,9 @@
 (require 'python-mode)
 (require 'pymacs)
 (require 'pycomplete)
-(require 'pycomplete+)
-(setq py-python-command-args '( "--colors" "Linux"))
 
+(setq py-python-command-args '( "--colors" "Linux"))
+(setq py-mode-map python-mode-map)
 (pymacs-load "ropemacs" "rope-")
 (add-hook 'python-mode-hook
           '(lambda () (eldoc-mode 1)) t)

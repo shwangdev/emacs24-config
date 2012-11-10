@@ -29,7 +29,8 @@
 
 (eval-after-load "pymacs"
   '(add-to-list 'pymacs-load-path "~/.emacs.d/"))
-;;(my-require-package 'anything-ipython)
+(my-require-package 'anything)
+(my-require-package 'anything-ipython)
 
 ;; 
 (defconst my-emacs-path "~/.emacs.d/" )
@@ -46,8 +47,8 @@
 (my-require-package 'auto-complete-etags)
 (my-require-package 'auto-complete-extension)
 (my-require-package 'auto-complete-yasnippet)
-;;(my-require-package 'anything-config)
-
+(my-require-package 'anything-config)
+;;(my-require-package 'pycomplete+)
 (require 'solarized)
 (load-theme 'solarized-dark t)
 ;;
@@ -61,7 +62,7 @@
 (require 'emms-settings)
 (require 'cedet-settings)
 (require 'gmail-mew)
-;;(require 'python-settings)
+(require 'python-settings)
 ;;
 (defun makeup()
   (interactive)
