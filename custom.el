@@ -5,7 +5,7 @@
 ;; -*- Emacs-Lisp -*-
 
 (require 'el-get)
-
+(require 'cl)
 (defun my-require-package (package-name)
   "Provide an automatic way to fetch packages from el-get storage"
   (unless  (require package-name nil 'noerror)
@@ -15,10 +15,7 @@
     )
   )
 
-;;(my-require-package 'color-theme)
-;;(color-theme-initialize)
-;;(color-theme-robin-hood)
-(load-theme 'solarized-dark)
+(my-require-package 'color-theme)
 
 (my-require-package 'json)
 (my-require-package 'erc)
@@ -44,6 +41,8 @@
 (my-require-package 'auto-complete-extension)
 (my-require-package 'auto-complete-yasnippet)
 
+(require 'solarized)
+(load-theme 'solarized-dark t)
 ;;
 (require 'icomplete-settings)
 (require 'jabber-settings)
@@ -54,6 +53,8 @@
 (require 'linum-settings)
 (require 'emms-settings)
 (require 'cedet-settings)
+(require 'gmail-mew)
+
 ;;
 (defun makeup()
   (interactive)
@@ -69,7 +70,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
