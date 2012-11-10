@@ -1,5 +1,6 @@
 *.elc
 *~
+*.pyc
 emms/*
 url/*
 el-get/

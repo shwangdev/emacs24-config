@@ -15,8 +15,6 @@
     )
   )
 
-(my-require-package 'color-theme)
-
 (my-require-package 'json)
 (my-require-package 'erc)
 (my-require-package 'emacs-jabber)
@@ -25,6 +23,14 @@
 (my-require-package 'maxframe)
 (my-require-package 'linum+)
 (my-require-package 'emms)
+(my-require-package 'ipython)
+;;(my-require-package 'python-mode)
+(my-require-package 'pymacs)
+
+(eval-after-load "pymacs"
+  '(add-to-list 'pymacs-load-path "~/.emacs.d/"))
+;;(my-require-package 'anything-ipython)
+
 ;; 
 (defconst my-emacs-path "~/.emacs.d/" )
 (defconst my-emacs-lisps-path  (concat my-emacs-path "site-lisps/"))
@@ -40,6 +46,7 @@
 (my-require-package 'auto-complete-etags)
 (my-require-package 'auto-complete-extension)
 (my-require-package 'auto-complete-yasnippet)
+;;(my-require-package 'anything-config)
 
 (require 'solarized)
 (load-theme 'solarized-dark t)
@@ -54,7 +61,7 @@
 (require 'emms-settings)
 (require 'cedet-settings)
 (require 'gmail-mew)
-
+;;(require 'python-settings)
 ;;
 (defun makeup()
   (interactive)
