@@ -2,6 +2,7 @@
 *~
 *.pyc
 emms/*
+eshell/*
 url/*
 el-get/
 ac-comphist.dat

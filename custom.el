@@ -26,6 +26,8 @@
 (my-require-package 'ipython)
 ;;(my-require-package 'python-mode)
 (my-require-package 'pymacs)
+(my-require-package 'shell-pop)
+(my-require-package 'shell-switcher)
 
 (eval-after-load "pymacs"
   '(add-to-list 'pymacs-load-path "~/.emacs.d/"))
@@ -63,6 +65,7 @@
 (require 'cedet-settings)
 (require 'gmail-mew)
 (require 'python-settings)
+(require 'shell-command-settings)
 ;;
 (defun makeup()
   (interactive)
