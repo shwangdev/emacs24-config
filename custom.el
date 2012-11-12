@@ -19,7 +19,6 @@
 (my-require-package 'erc)
 (my-require-package 'emacs-jabber)
 (my-require-package 'icomplete+)
-(my-require-package 'emacs-jabber)
 (my-require-package 'maxframe)
 (my-require-package 'linum+)
 (my-require-package 'emms)
