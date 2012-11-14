@@ -4,7 +4,6 @@
 
 (require 'auto-complete)
 (require 'auto-complete-config)
-(require 'anything-ipython)
 (require 'auto-complete+)
 (require 'misc)
 

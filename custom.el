@@ -6,6 +6,7 @@
 
 (require 'el-get)
 (require 'cl)
+
 (defun my-require-package (package-name)
   "Provide an automatic way to fetch packages from el-get storage"
   (unless  (require package-name nil 'noerror)
@@ -21,18 +22,13 @@
 (my-require-package 'icomplete+)
 (my-require-package 'maxframe)
 (my-require-package 'linum+)
-(my-require-package 'emms)
-(my-require-package 'ipython)
-;;(my-require-package 'python-mode)
+;;(my-require-package 'emms)
 (my-require-package 'pymacs)
-(my-require-package 'shell-pop)
-(my-require-package 'shell-switcher)
-
 (eval-after-load "pymacs"
   '(add-to-list 'pymacs-load-path "~/.emacs.d/"))
 (my-require-package 'anything)
-(my-require-package 'anything-ipython)
-
+(my-require-package 'shell-pop)
+(my-require-package 'shell-switcher)
 ;; 
 (defconst my-emacs-path "~/.emacs.d/" )
 (defconst my-emacs-lisps-path  (concat my-emacs-path "site-lisps/"))
@@ -48,8 +44,7 @@
 (my-require-package 'auto-complete-etags)
 (my-require-package 'auto-complete-extension)
 (my-require-package 'auto-complete-yasnippet)
-(my-require-package 'anything-config)
-;;(my-require-package 'pycomplete+)
+
 (require 'solarized)
 (load-theme 'solarized-dark t)
 ;;
@@ -60,7 +55,7 @@
 (require 'maxframe-settings)
 (require 'auto-complete-settings)
 (require 'linum-settings)
-(require 'emms-settings)
+;;(require 'emms-settings)
 (require 'cedet-settings)
 (require 'gmail-mew)
 (require 'python-settings)

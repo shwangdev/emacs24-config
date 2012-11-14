@@ -34,11 +34,6 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 
-(setq custom-file (concat dotfiles-dir "custom.el"))
-
-
-(load custom-file 'noerror)
-
 ;; You can keep system- or user-specific customizations here
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
@@ -49,6 +44,9 @@
 (if (file-exists-p user-specific-dir)
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 (if (file-exists-p user-specific-config) (load user-specific-config))
+
+(setq custom-file (concat dotfiles-dir "custom.el"))
+(load custom-file 'noerror)
 
 ;;; init.el ends here
 
