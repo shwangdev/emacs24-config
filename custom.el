@@ -60,6 +60,7 @@
 (require 'gmail-mew)
 (require 'python-settings)
 (require 'shell-command-settings)
+(require 'cc-mode-settings)
 ;;
 (defun makeup()
   (interactive)
