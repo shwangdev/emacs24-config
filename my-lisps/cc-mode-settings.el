@@ -10,7 +10,7 @@
 (c-set-offset 'substatement-open 0)
 
 (defun my-c-mode-common-hook()
-  (setq tab-width 4 indent-tabs-mode nil)
+  (setq tab-width 8 indent-tabs-mode nil)
   ;;; hungry-delete and auto-newline
   (c-toggle-auto-hungry-state 1)
   ;;按键定义

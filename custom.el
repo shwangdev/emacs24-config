@@ -61,6 +61,7 @@
 (require 'python-settings)
 (require 'shell-command-settings)
 (require 'cc-mode-settings)
+(setq tab-width 8 indent-tabs-mode nil)
 ;;
 (defun makeup()
   (interactive)
