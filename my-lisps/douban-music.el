@@ -153,7 +153,7 @@ feed data to music player")
    )
   )
 
-(global-set-key (kbd "C-c p")     'douban-music-play-next-song)
-(global-set-key (kbd "C-c P")     'douban-music-stop-play)
+(global-set-key (kbd "<f5>")     'douban-music-play-next-song)
+(global-set-key (kbd "<\C-f5>")     'douban-music-stop-play)
 
 (provide 'douban-music)
