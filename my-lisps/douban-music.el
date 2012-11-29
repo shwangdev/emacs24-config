@@ -8,7 +8,7 @@
   (require 'cl))
 (require 'url-http)
 (require 'json)
-(require 'tooltip)
+(require 'popup)
 
 (defgroup douban-music nil
   "douban music interface"
@@ -55,6 +55,7 @@ feed data to music player")
           (copy-to-local-store json)
         (progn
 	  (error "Invalid data format")
+	  (setq channel-number (random 20))
 	  )
         )
       )
@@ -116,7 +117,7 @@ feed data to music player")
         (progn
           (setq current-song (douban-music-pop-song-from-store))
           (setq song current-song)
-	  (tooltip-show (aget song 'title))
+          (douban-music-current-song-info)
           (set-process-filter
            (start-process "douban-music-proc" nil "mpg123" (aget song 'url))
            'play-music-filter
@@ -150,8 +151,15 @@ feed data to music player")
 
 (defun douban-music-current-song-info ()
   (interactive)
-  (
-   princ current-song   
+  (progn
+   ;;princ current-song   
+   (popup-tip
+    (message "Title\t:%s\nArtist\t:%s\nCompany\t:%s"
+             (decode-coding-string (aget current-song 'title) 'utf-8)
+             (decode-coding-string (aget current-song 'artist) 'utf-8)
+             (decode-coding-string (aget current-song 'company) 'utf-8)
+             )
+    )
    )
   )
 
