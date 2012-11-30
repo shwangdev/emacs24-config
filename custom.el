@@ -45,7 +45,8 @@
 (my-require-package 'auto-complete-etags)
 (my-require-package 'auto-complete-extension)
 (my-require-package 'auto-complete-yasnippet)
-
+(my-require-package 'xml-parse)
+(my-require-package 'pos-tip)
 (require 'solarized)
 (load-theme 'solarized-dark t)
 ;;
@@ -64,6 +65,7 @@
 (require 'shell-command-settings)
 (require 'cc-mode-settings)
 (require 'ecb-settings)
+(require 'dict-youdao)
 (setq tab-width 8 indent-tabs-mode nil)
 ;;
 (defun makeup()
@@ -74,7 +76,7 @@
     (byte-recompile-directory (expand-file-name "~/.emacs.d/my-lisps") 0)
     (byte-recompile-directory (expand-file-name "~/.emacs.d/site-lisps") 0)
     )
-)
+  )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
