@@ -8,6 +8,7 @@
   (require 'cl))
 (require 'url-http)
 (require 'json)
+(require 'tooltip)
 (require 'popup)
 
 (defgroup douban-music nil
@@ -117,8 +118,15 @@ feed data to music player")
         (progn
           (setq current-song (douban-music-pop-song-from-store))
           (setq song current-song)
-          (douban-music-current-song-info)
-          (set-process-filter
+          ;;(douban-music-current-song-info)
+	  (tooltip-show
+	   (message "Title\t:%s\nArtist\t:%s\nCompany\t:%s"
+		    (decode-coding-string (aget current-song 'title) 'utf-8)
+		    (decode-coding-string (aget current-song 'artist) 'utf-8)
+		    (decode-coding-string (aget current-song 'company) 'utf-8)
+		    )
+	   )
+	  (set-process-filter
            (start-process "douban-music-proc" nil "mpg123" (aget song 'url))
            'play-music-filter
            )
