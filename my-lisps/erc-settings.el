@@ -5,7 +5,11 @@
 ;; -*- Emacs-Lisp -*-
 
 (require 'socks)
-
+(require 'erc)
+(require 'erc-notify)
+(require 'erc-highlight-nicknames)
+(erc-highlight-nicknames-mode)
+(erc-notify-mode)
 (defun erc-use-proxy ()
   (interactive)
   (setq erc-server-connect-function 'socks-open-network-stream)

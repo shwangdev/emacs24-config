@@ -21,7 +21,7 @@
 This store is a containner which pulls data from remote server, and
 feed data to music player")
 
-(defvar channel-number (random 20))
+(defvar channel-number 1)
 
 (defcustom douban-music-server (concat "http://douban.fm/j/mine/playlist?type=n&channel="  
 				      (number-to-string channel-number))

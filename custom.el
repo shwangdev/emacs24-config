@@ -18,6 +18,8 @@
 
 (my-require-package 'json)
 (my-require-package 'erc)
+(my-require-package 'erc-highlight-nicknames)
+(my-require-package 'erc-nick-notify)
 (my-require-package 'emacs-jabber)
 (my-require-package 'icomplete+)
 (my-require-package 'maxframe)

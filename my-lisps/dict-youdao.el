@@ -62,7 +62,7 @@
 
 (defun lookup-word (word)
   "translate world from youdao fanyi or sdcv"
-  (interactive "sThe word to translate: ")
+  (interactive "SThe words to translate: ")
   (let* ((sdcv-command (format "sdcv -n %s" word))
          (print sdcv-command)
          (translate-result (get-translate-result word))
