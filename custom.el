@@ -25,6 +25,12 @@
 (my-require-package 'maxframe)
 (my-require-package 'linum+)
 ;;(my-require-package 'emms)
+(my-require-package 'python)
+(my-require-package 'python-mode)
+(my-require-package 'ipython)
+(my-require-package 'ac-python)
+(my-require-package 'anything-ipython)
+(my-require-package 'python-pep8)
 (my-require-package 'pymacs)
 (eval-after-load "pymacs"
   '(add-to-list 'pymacs-load-path "~/.emacs.d/"))

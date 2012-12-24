@@ -4,8 +4,12 @@
 
 ;; -*- Emacs-Lisp -*-
 
-
-(load "python-mode.el")
+;;(load "../../el-get/python/python.el")
+(load "python.el")
+(require 'python-pep8)
+(require 'anything-ipython)
+(require 'python-mode)
+;;(load "python-mode.el")
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq interpreter-mode-alist (cons '("python" . python-mode) interpreter-mode-alist))
 ;;自动加载，将 python-mode 和文件 python-mode.elc关联
@@ -23,7 +27,7 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (require 'pycomplete)
-
+(require 'ipython)
 
 (defun load-ropemacs ()
   "Load pymacs and ropemacs"
