@@ -23,8 +23,10 @@
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+
 
 (el-get 'sync)
 
@@ -42,7 +44,7 @@
 
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-dir)
-  (mapc #'load (directory-files user-specific-dir nil ".*el$")))
+    (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 
 (setq custom-file (concat dotfiles-dir "custom.el"))
